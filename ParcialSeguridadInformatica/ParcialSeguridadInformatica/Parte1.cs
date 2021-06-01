@@ -31,61 +31,90 @@ namespace ParcialSeguridadInformatica
             ee = 2;
             d = 0;
 
-            ///Paso 1 - Ingresar valores
-            #region Paso1
+            ///Ingresar valores
 
-            p = Convert.ToInt32(textBox1.Text);
-            q = Convert.ToInt32(textBox2.Text);
-            #endregion
-
-            // Paso 2 - Validar que sean primos      
-            #region Paso2
-            if (validarPrimos(p) && p != 1)
+            if (validardatosentrada())
             {
-                if (validarPrimos(q) && q != 1)
+                p = Convert.ToInt32(textBox1.Text);
+                q = Convert.ToInt32(textBox2.Text);
+
+                // Validar que sean primos      
+
+                if (validarmayor100(p) && validarPrimos(p) && p != 1)
                 {
-                    //Paso 3 - Calcular valores n y of
-                    calcularValoresNyOf(p, q);
-
-                    do
+                    if (validarmayor100(q) && validarPrimos(q) && q != 1 )
                     {
-                        //Paso 4 - Determinar e
-                        buscare(of);
-                        //MessageBox.Show(ee.ToString(), "valor e");
+                        //Calcular valores n y of(ø)
+                        calcularValoresNyOf(p, q);
+
+                        do
+                        {
+                            //Determinar e
+                            buscare(of);
+                            
+                            //Determinar d
+                            calculard();
+                        }
+                        while (ee == 0 || d == 0);
 
 
-                        //Paso 5 - Determinar d
-
-                        calculard();
-                        //MessageBox.Show(d.ToString(), "valor d");
-
-                    }
-                    while (ee == 0 || d == 0);
-
-
-                    if (ee <= of)
-                    {
-                        label5.Text = "(" + ee.ToString() + " ," + n.ToString() + ")";
-                        label6.Text = "(" + d.ToString() + " ," + n.ToString() + ")";
+                        if (ee <= of)
+                        {
+                            label5.Text = "(" + ee.ToString() + " ," + n.ToString() + ")";
+                            label6.Text = "(" + d.ToString() + " ," + n.ToString() + ")";
+                        }
+                        else
+                        {
+                            label5.Text = "No es posible calcular la clave con los valores indicados";
+                            label6.Text = "No es posible calcular la clave con los valores indicados";
+                        }
                     }
                     else
                     {
-                        label5.Text = "No es posible calcular la clave con los valores indicados";
-                        label6.Text = "No es posible calcular la clave con los valores indicados";
+                        MessageBox.Show("El segundo número no es primo", "Error");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("El segundo número no es primo", "Error");
+                    MessageBox.Show("El primer número no es primo", "Error");
                 }
+            }
+
+        }
+
+        public bool validardatosentrada()
+        {
+            int resultado = 0;
+
+            if (textBox1.Text == "" || textBox2.Text == "")
+            {
+                MessageBox.Show("Completar los 2 campos", "ERROR");
+                return false;
             }
             else
             {
-                MessageBox.Show("El primer número no es primo", "Error");
+                if (Int32.TryParse(textBox1.Text, out resultado) && Int32.TryParse(textBox2.Text, out resultado))
+                {
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Los campos deben ser numéricos enteros", "ERROR");
+                    return false;
+                }
             }
-            #endregion
 
+        }
 
+        public bool validarmayor100(int nnn)
+        {
+            if(nnn > 100)
+            {
+                MessageBox.Show("Los números deben ser menor o igual a 100", "ERROR");
+                return false;
+            }
+
+            return true;
 
         }
 
@@ -120,7 +149,7 @@ namespace ParcialSeguridadInformatica
         public int calcularMCD(int a, int b)
         {
             int resultado = 0;
-            do //ciclo para las iteraciones
+            do 
             {
                 resultado = b;  // Guardamos el divisor en el resultado
                 b = a % b;      //Guardamos el resto en el divisor
@@ -132,7 +161,7 @@ namespace ParcialSeguridadInformatica
             return resultado;
 
         }
-        public void buscare(int of) //Paso 4
+        public void buscare(int of) //Se calcula e
         {
             if (ee != 2)
             {
@@ -147,20 +176,16 @@ namespace ParcialSeguridadInformatica
                     break;
                 }
             }
-
         }
 
-        public int calculard()
+        public int calculard() //Se calcula d
         {
             for (int i = 1; i < of; i++)
             {
                 if ((ee * i - 1) % of == 0 && i != ee)
                 {
-                    //if (i != ee)
-                    //{
                     d = i;
                     break;
-                    //}
                 }
             }
             return d;

@@ -39,8 +39,6 @@ namespace ParcialSeguridadInformatica
 
                 calcularm(menDesencrip);
 
-                //cifrarMensaje(c1, c2, mensaje);
-
                 valorc = calcularc(valorm);
 
                 label4.Text = valorc.ToString();
@@ -68,7 +66,7 @@ namespace ParcialSeguridadInformatica
                 }
                 else
                 {
-                    MessageBox.Show("Los campos clave deben ser numéricos", "ERROR");
+                    MessageBox.Show("Los campos clave deben ser numéricos enteros", "ERROR");
                     return false;
                 }
             }
@@ -160,13 +158,7 @@ namespace ParcialSeguridadInformatica
                 valorm = (valorm * valorm) % c2n;
 
             }
-
             return menDesencrip;
-
-            //label4.Text = menDesencrip.ToString();
-
-            //pasarATexto(menDesencrip);
-
         }
 
         public void pasarATexto(int mensaje)
@@ -257,11 +249,9 @@ namespace ParcialSeguridadInformatica
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-
             int bb = 27 / 4;
 
             MessageBox.Show(bb.ToString());
-
         }
 
         private void label9_Click(object sender, EventArgs e)
