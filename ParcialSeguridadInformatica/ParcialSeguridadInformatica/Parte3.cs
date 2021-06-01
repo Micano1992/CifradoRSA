@@ -26,7 +26,6 @@ namespace ParcialSeguridadInformatica
             if (validardatosentrada())
             {
                 menEntrada = textBox1.Text.ToLower();
-                //menEnciptado = Convert.ToInt32(textBox1.Text);
                 c1d = Convert.ToInt32(textBox2.Text);
                 c2n = Convert.ToInt32(textBox3.Text);
 
@@ -111,11 +110,6 @@ namespace ParcialSeguridadInformatica
             //ulong c1dd = Convert.ToUInt64(c1d);
             //ulong c2nn = Convert.ToUInt64(c2n);
 
-            //ulong num1 = 0;
-
-            //int bass = m;
-            //int exp = 27;
-            //int m = 55;
             int menDesencrip = 1;
 
             while (c1d > 0)
@@ -129,10 +123,6 @@ namespace ParcialSeguridadInformatica
             }
 
             return menDesencrip;
-
-            //label4.Text = menDesencrip.ToString();
-
-            //mostrarmensaje(menDesencrip);
         }
 
         public void mostrarmensaje(int mensaje)
@@ -198,7 +188,7 @@ namespace ParcialSeguridadInformatica
                 case 7: return "H";
                 case 8: return "I";
                 case 9: return "J";
-                case 10: return "J";
+                case 10: return "K";
                 case 11: return "L";
                 case 12: return "M";
                 case 13: return "N";
