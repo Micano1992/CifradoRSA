@@ -1,0 +1,13 @@
+C:\Users\MatiasIvan.Cano\source\repos\ParcialSeguridadInformatica\ParcialSeguridadInformatica\bin\Debug\ParcialSeguridadInformatica.exe.config
+C:\Users\MatiasIvan.Cano\source\repos\ParcialSeguridadInformatica\ParcialSeguridadInformatica\bin\Debug\ParcialSeguridadInformatica.exe
+C:\Users\MatiasIvan.Cano\source\repos\ParcialSeguridadInformatica\ParcialSeguridadInformatica\bin\Debug\ParcialSeguridadInformatica.pdb
+C:\Users\MatiasIvan.Cano\source\repos\ParcialSeguridadInformatica\ParcialSeguridadInformatica\obj\Debug\ParcialSeguridadInformatica.csprojAssemblyReference.cache
+C:\Users\MatiasIvan.Cano\source\repos\ParcialSeguridadInformatica\ParcialSeguridadInformatica\obj\Debug\ParcialSeguridadInformatica.Properties.Resources.resources
+C:\Users\MatiasIvan.Cano\source\repos\ParcialSeguridadInformatica\ParcialSeguridadInformatica\obj\Debug\ParcialSeguridadInformatica.csproj.GenerateResource.cache
+C:\Users\MatiasIvan.Cano\source\repos\ParcialSeguridadInformatica\ParcialSeguridadInformatica\obj\Debug\ParcialSeguridadInformatica.csproj.CoreCompileInputs.cache
+C:\Users\MatiasIvan.Cano\source\repos\ParcialSeguridadInformatica\ParcialSeguridadInformatica\obj\Debug\ParcialSeguridadInformatica.exe
+C:\Users\MatiasIvan.Cano\source\repos\ParcialSeguridadInformatica\ParcialSeguridadInformatica\obj\Debug\ParcialSeguridadInformatica.pdb
+C:\Users\MatiasIvan.Cano\source\repos\ParcialSeguridadInformatica\ParcialSeguridadInformatica\obj\Debug\ParcialSeguridadInformatica.Index.resources
+C:\Users\MatiasIvan.Cano\source\repos\ParcialSeguridadInformatica\ParcialSeguridadInformatica\obj\Debug\ParcialSeguridadInformatica.Parte1.resources
+C:\Users\MatiasIvan.Cano\source\repos\ParcialSeguridadInformatica\ParcialSeguridadInformatica\obj\Debug\ParcialSeguridadInformatica.Parte2.resources
+C:\Users\MatiasIvan.Cano\source\repos\ParcialSeguridadInformatica\ParcialSeguridadInformatica\obj\Debug\ParcialSeguridadInformatica.Parte3.resources
