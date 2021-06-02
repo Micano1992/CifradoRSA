@@ -16,4 +16,4 @@ Formulario Parte 1: Permite obtener las claves de encriptación y desencriptaci�
 
 Formulario Parte 2: Permite encriptar un texto (máximo 3 caracteres) con una clave. Input texto y clave (n, e). Output texto encriptado.
 
-Formulario Parte 3: Permite desencriptar un texto con una clave. Input: texto y un clave (n, d). Output: texto desencriptado.
+Formulario Parte 3: Permite desencriptar un texto con una clave. Input: texto y una clave (n, d). Output: texto desencriptado.
