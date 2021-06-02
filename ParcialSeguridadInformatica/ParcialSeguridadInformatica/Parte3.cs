@@ -110,19 +110,21 @@ namespace ParcialSeguridadInformatica
             //ulong c1dd = Convert.ToUInt64(c1d);
             //ulong c2nn = Convert.ToUInt64(c2n);
 
-            int menDesencrip = 1;
+            UInt64 menDesencrip = 1;
+            UInt64 menc = Convert.ToUInt64(numEncriptado);
+            UInt64 valorn = Convert.ToUInt64(c2n);
 
             while (c1d > 0)
             {
                 if ((c1d & 1) > 0)
                 {
-                    menDesencrip = (menDesencrip * numEncriptado) % c2n;
+                    menDesencrip = (menDesencrip * menc) % valorn;
                 }
                 c1d >>= 1;
-                numEncriptado = (numEncriptado * numEncriptado) % c2n;
+                menc = (menc * menc) % valorn;
             }
 
-            return menDesencrip;
+            return Convert.ToInt32(menDesencrip);
         }
 
         public void mostrarmensaje(int mensaje)
@@ -135,6 +137,7 @@ namespace ParcialSeguridadInformatica
             int valorfinal = 0;
             string texto = "";
 
+
             if (mensaje <= 456976 && mensaje > 17576)
             {
                 valorfinal = mensaje / 17576;
@@ -142,9 +145,10 @@ namespace ParcialSeguridadInformatica
                 texto += obtenerletra(valorfinal);
 
                 mensaje -= valorfinal * 17576;
+
             }
 
-            if (mensaje <= 17576 && mensaje > 676)
+            if ((mensaje <= 17576 && mensaje > 676))
             {
                 valorfinal = mensaje / 676;
 

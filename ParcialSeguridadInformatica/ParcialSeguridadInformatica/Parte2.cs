@@ -146,19 +146,21 @@ namespace ParcialSeguridadInformatica
         }
         public int calcularc(int mensaje)
         {
-            int menDesencrip = 1;
+            UInt64 menDesencrip = 1;
+            UInt64 menc = Convert.ToUInt64(valorm);
+            UInt64 valorn = Convert.ToUInt64(c2n);
 
             while (c1e > 0)
             {
                 if ((c1e & 1) > 0)
                 {
-                    menDesencrip = (menDesencrip * valorm) % c2n;
+                    menDesencrip = (menDesencrip * menc) % valorn;
                 }
                 c1e >>= 1;
-                valorm = (valorm * valorm) % c2n;
+                menc = (menc * menc) % valorn;
 
             }
-            return menDesencrip;
+            return Convert.ToInt32(menDesencrip);
         }
 
         public void pasarATexto(int mensaje)
@@ -170,6 +172,7 @@ namespace ParcialSeguridadInformatica
 
             int valorfinal = 0;
             string texto = "";
+            bool vari = false;
 
             if (mensaje <= 456976 && mensaje > 17576)
             {
@@ -178,27 +181,34 @@ namespace ParcialSeguridadInformatica
                 texto += obtenerletra(valorfinal);
 
                 mensaje -= valorfinal * 17576;
+
+                vari = true;
             }
 
-            if (mensaje <= 17576 && mensaje > 676)
+            if ((mensaje <= 17576 && mensaje > 676) || vari)
             {
                 valorfinal = mensaje / 676;
 
                 texto += obtenerletra(valorfinal);
 
                 mensaje -= valorfinal * 676;
+
+                vari = true;
             }
 
-            if (mensaje <= 676 && mensaje > 26)
+            if (mensaje <= 676 && mensaje > 26 || vari)
             {
                 valorfinal = mensaje / 26;
 
                 texto += obtenerletra(valorfinal);
 
                 mensaje -= valorfinal * 26;
+
+                vari = true;
+
             }
 
-            if (mensaje <= 26)
+            if (mensaje <= 26 || vari)
             {
                 valorfinal = mensaje;
 
@@ -224,7 +234,7 @@ namespace ParcialSeguridadInformatica
                 case 7: return "H";
                 case 8: return "I";
                 case 9: return "J";
-                case 10: return "J";
+                case 10: return "K";
                 case 11: return "L";
                 case 12: return "M";
                 case 13: return "N";
